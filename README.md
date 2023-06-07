@@ -82,8 +82,6 @@
     
     [ 1 -eq 1 ] 
     echo $? # 0
-    
-    
 ```
 
 ### wc -w <<< "Hello there wordcount!"
@@ -227,57 +225,68 @@
 
 ## CHEAT SHEET
 
-| Syntax | Description |
-| - | - |
-| #!/bin/bash | Shebang |
-| #!/usr/bin/env bash | |
-| # | comments |
-| chmod +x script.sh && ./script.sh | |
-| $# | Stores the number of arguments passed to the Bash script |
-| $1, $2, $3 | |
-| exit | Exit from the Bash script, optionally add an error code |
-| $() | Execute a command inside of a subshell |
-| sleep | Pause for a specified number of seconds, minutes, hours, or days |
-| if then fi | Test a condigion and execute the clause if it is true then |
-| if then else fi | |
-| if then elif else fi | |
-| for do done | |
-| until do done | |
-| while do done | |
-| break | |
-| continus | |
-| -lt | < |
-| -gt | > |
-| -le | <= |
-| -ge | >= |
-| -eq | == |
-| -ne | != |
-| ((i++)) | Increment a variable |
-| ((i--)) | Decrement a variable |
-| : String Comparison Operators : ||
-| = | equal |
-| != | not equal |
-| < | less then |
-| -n s1 | string s1 is not empty |
-| -z s1 | string s1 is empty |
-| : Bash File Testing Operatiors : ||
-| -b filename | Block special file |
-| -c filename | Special character file |
-| -d directoryname | Check for directory existence |
-| -e filename | Check for file existence |
-| -f filename | Check for regular file existence not a directory |
-| -G filename | Check if file exists and is owned by effective group \| ID. |
-| -g filename | true if file exists and is set-group-id. |
-| -k filename | Sticky bit |
-| -L filename | Symbolic link |
-| -O filename | True if file exists and is owned by the effective user \| id. |
-| -r filename | Check if file is a readable |
-| -S filename | Check if file is socket |
-| -s filename | Check if file is nonzero size |
-| -u filename | Check if file set-ser-id bit is set |
-| -w filename | Check if file is writable |
-| -x filename | Check if file is executable |
-| : Boolean Operators : ||
-| && | Logical AND operator |
-| \|\| | Logical OR operator |
-| ! | NOT equal to operator |
+| Syntax                            | Description                                                      |
+| --------------------------------- | ---------------------------------------------------------------- |
+| #!/bin/bash                       | Shebang                                                          |
+| #!/usr/bin/env bash               |                                                                  |
+| #                                 | comments                                                         |
+| chmod +x script.sh && ./script.sh |                                                                  |
+| $#                                | Stores the number of arguments passed to the Bash script         |
+| $1, $2, $3                        |                                                                  |
+| exit                              | Exit from the Bash script, optionally add an error code          |
+| $()                               | Execute a command inside of a subshell                           |
+| sleep                             | Pause for a specified number of seconds, minutes, hours, or days |
+| if then fi                        | Test a condigion and execute the clause if it is true then       |
+| if then else fi                   |                                                                  |
+| if then elif else fi              |                                                                  |
+| for do done                       |                                                                  |
+| until do done                     |                                                                  |
+| while do done                     |                                                                  |
+| break                             |                                                                  |
+| continus                          |                                                                  |
+| -lt                               | <                                                                |
+| -gt                               | >                                                                |
+| -le                               | <=                                                               |
+| -ge                               | >=                                                               |
+| -eq                               | ==                                                               |
+| -ne                               | !=                                                               |
+| ((i++))                           | Increment a variable                                             |
+| ((i--))                           | Decrement a variable                                             |
+| : String Comparison Operators :   |                                                                  |
+| =                                 | equal                                                            |
+| !=                                | not equal                                                        |
+| <                                 | less then                                                        |
+| -n s1                             | string s1 is not empty                                           |
+| -z s1                             | string s1 is empty                                               |
+| : Bash File Testing Operatiors :  |                                                                  |
+| -b filename                       | Block special file                                               |
+| -c filename                       | Special character file                                           |
+| -d directoryname                  | Check for directory existence                                    |
+| -e filename                       | Check for file existence                                         |
+| -f filename                       | Check for regular file existence not a directory                 |
+| -G filename                       | Check if file exists and is owned by effective group \| ID.      |
+| -g filename                       | true if file exists and is set-group-id.                         |
+| -k filename                       | Sticky bit                                                       |
+| -L filename                       | Symbolic link                                                    |
+| -O filename                       | True if file exists and is owned by the effective user \| id.    |
+| -r filename                       | Check if file is a readable                                      |
+| -S filename                       | Check if file is socket                                          |
+| -s filename                       | Check if file is nonzero size                                    |
+| -u filename                       | Check if file set-ser-id bit is set                              |
+| -w filename                       | Check if file is writable                                        |
+| -x filename                       | Check if file is executable                                      |
+| : Boolean Operators :             |                                                                  |
+| &&                                | Logical AND operator                                             |
+| \|\|                              | Logical OR operator                                              |
+| !                                 | NOT equal to operator                                            |
+
+---
+
+## bash 테스트 조건
+
+|   조건    | 설명  |
+| :-------: | :---- |
+| $a -lt $b | a < b |
+| $a -gt $b | a > b |
+
+
