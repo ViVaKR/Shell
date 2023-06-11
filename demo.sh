@@ -1,5 +1,4 @@
-#! /bin/bash
-
+#!/usr/local/bin/bash
 read -p "Enter Your Name " name
 >> 
 greeting=Hello

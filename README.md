@@ -288,5 +288,19 @@
 | :-------: | :---- |
 | $a -lt $b | a < b |
 | $a -gt $b | a > b |
+| $a -le $b | a <= b |
+| $a -ge $b | a >= b |
+| $a -eq $b | a == b |
+| $a -ne $b | a != b |
+| -e $FILE | $FILE exists |
+| -d $FILE | $FILE exists and is a directory |
+| -f $FILE | $FILE exists and is a regular file |
+| -z $str1 | $str1 is empty |
+| $str1 = $str2 | $str1 is equal to $str2 |
+| $str1 != $str2 | $str1 is not equal to $str2 |
 
+## To evaluate an expression on `bash` $\rightarrow$ `expr`
+
+- addition, subtraction, multiplication, division, modulus
+- string substring, length of strings, etc
 
