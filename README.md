@@ -1,6 +1,6 @@
 # SHELL
 
-## Create `bootcamp.sh` file
+## Create `.sh` file
 
 ```bash
     chmod u+x hello_world.sh
@@ -8,10 +8,22 @@
 
 ## shebang :  `echo $SHELL`
 
-- 쉘 선언문
-- insert  `#! /bin/zsh` top of .sh script
+## 쉘 선언문
 
----
+- insert  `#! /bin/zsh` top of .sh script
+- Bourne Shell : `/bin/sh`
+- C Shell : `/bin/csh`
+- tee-see-Shell (tcsh) : `/bin/tcsh`
+- Z Shell (zsh) : 확장형 Burne Shell `/bin/zsh`
+- Bourne-again Shell (bash) : `/bin/bash`
+
+## 로그인 파일 순서
+
+1. `/etc/profile`
+2. `/etc/profile.d/*.sh`
+3. `!/.bash_profile`
+4. `~/.bashrc`
+5. `/etc/bashrc`
 
 ## Define Variable
 
@@ -101,16 +113,76 @@
 `%` : mudulus  
 
 ```bash
-    expr 45 + 5
-    expr 16 / 4
-    expr 20 - 10
-    expr 5 * 6
-
     var=$((3 ** 4))
     echo $var
-    
     echo "scale=2;22/7" | bc # 3.14
 ```
+
+## 비교연산
+
+- 문자열 비교
+	* 문자1 = 문자2
+	* 문자1 == 문자2
+	* 문자1 != 문자2
+	* 문자 == 패턴
+	* 문자 != 패턴
+	* -z 문자			# null 이면 true
+	* -n 문자			# null 이 아니면 true
+
+- 숫자 비교
+	* 값1 -eq 값2		# equal
+	* 값1 -ne 값2		# not equal
+	* 값1 -lt 값2		# less than
+	* 값1 -le 값2		# less or equal
+	* 값1 -gt 값2		# greater than
+	* 값1 -ge 값2		# greater or equal 
+
+## 이중 괄호 (( expression ))
+
+- !			: 논리 부정
+- ~			: 비트 부정
+- **		: 지수화
+- <<		: bit shift left
+- >>		: bit shift right
+- &			: bit and
+- |			: bit or
+- &&		: 논리 and
+- ||		: 논리 or
+- num++		: 후위 증가
+- num--		: 후위 감소
+- ++num		: 전위 증가
+- --num		: 전위 감소
+ 
+## 파일 검사
+
+* [ -b file ]	:
+* [ -c file ]	: file 이 문자 장치이면 true
+* [ -d file ]	: file 이 디렉토리이면 true
+* [ -e file ]	: file 이 존재하면 true
+* [ -f file ]	: file 이 존재하면 true
+* [ -g file ]	: 
+* [ -k file ]	: 
+* [ -L file ]	: file 이 심볼릭 링크이면 참
+* [ -p file ]	: 
+* [ -r file ]	: file 이 읽을 수 있는 파일이면 true
+* [ -s file ]	: file 이 null 이 아니면 true
+* [ -S file ]	: file 이 socket 장치 이면 true
+* [ -t file ]	: 
+
+## 논리 연산
+
+* 조건1 -a 조건2	: and
+* 조건1 -o 조건2	: or
+* 조건1 && 조건2	: and
+* 조건1 || 조건2	: or
+* !조건			   : not
+
+## 이중 괄호 : `(( ))`
+- 괄호 내부에 기호 수식을 사용하여 계산을 할수 있음
+  
+## 이중 대괄호 : `[[ ]]`
+- 문자열의 비교를 위해 사용됨
+
 
 ## `$ echo`
 
@@ -375,3 +447,4 @@
 - addition, subtraction, multiplication, division, modulus
 - string substring, length of strings, etc
 
+## 들어오는 매개 변수 : `$1 ~ $999`, `$*, $@`
