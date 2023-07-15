@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#! /usr/bin/bash
 
 clear
 
@@ -66,3 +66,5 @@ do
         continue
     fi
 done
+
+
