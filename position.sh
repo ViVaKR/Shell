@@ -1,9 +1,9 @@
 #! /bin/zsh
 
-echo Hello There
-# 0   1      2
-# Positional Arguments : 공백으로 구분
+a=5;
+echo "a = $a"
+let "a+=1"
+echo "a = $a"
 
-
-echo $1 $2
-
+b=(($a + 2))
+echo $b
