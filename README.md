@@ -1,15 +1,16 @@
+
 # SHELL
 
 ## shebang : `echo #SHELL`
 
 ### Arithmetic Expressions
 
-`+` : addition  
-`-` : subtraction  
-`*` : multiplication  
-`/` : division  
-`**` : exponetiation  
-`%` : mudulus  
+`+` : addition
+`-` : subtraction
+`*` : multiplication
+`/` : division
+`**` : exponetiation
+`%` : mudulus
 
 ```bash
 expr 45 + 5
@@ -25,15 +26,15 @@ echo "scale=2;22/7" | bc # 3.14
 
 ## `PIPING` : Send Command Output To Other Command
 
-> Command one   >> Pipe Symbol    >> Command two  
+> Command one   >> Pipe Symbol    >> Command two
 > `echo Hello`  >> echo Hello `|` >> echo Hello | `grep there`
 >> (ex) `$ ls -l /usr/bin | grep zip`
 
 ## Output Redirection
 
-- Symbol ( `>` ) : Write or OverWrite to a file  
-  -`$ echo Hello World! > hello.txt`  
-- Symbol ( `>>` ) : Append to a file  
+- Symbol ( `>` ) : Write or OverWrite to a file
+  -`$ echo Hello World! > hello.txt`
+- Symbol ( `>>` ) : Append to a file
   -`$ echo Hi Everyone! >> hello.txt`
 
 ## `$ wc -w hello.txt` : 단어수
@@ -53,14 +54,14 @@ echo "scale=2;22/7" | bc # 3.14
 ```bash
     [ hello = hello ]
     echo $? # -> 0 ( 결과 0 = 문제없음)
-    
+
     [ 1 = 0 ]
     echo $? # -> 1 (결과 1 = 문제있음 )
-    
-    [ 1 -eq 1 ] 
+
+    [ 1 -eq 1 ]
     echo $? # 0
-    
-    
+
+
 ```
 
 ### wc -w <<< "Hello there wordcount!"
@@ -126,7 +127,7 @@ echo "scale=2;22/7" | bc # 3.14
       - decalre -A map
     - 함수 타입 : `-f`
       - declare : `-f`
-  
+
   - 환경변수 (export) : `-x`
     - `declare -x var`
     - 스크립트 외부 환경에서도 이 변수를 사용할 수 있게 해줌
@@ -185,12 +186,12 @@ echo "scale=2;22/7" | bc # 3.14
 - `let` :
 - `$(())` :
 
-`+` : addition  
-`-` : subtraction  
-`*` : multiplication  
-`/` : division  
-`**` : exponetiation  
-`%` : mudulus  
+`+` : addition
+`-` : subtraction
+`*` : multiplication
+`/` : division
+`**` : exponetiation
+`%` : mudulus
 
 ```bash
     var=$((3 ** 4))
@@ -263,12 +264,12 @@ echo "scale=2;22/7" | bc # 3.14
 
 ## - `PIPING` : Send Command Output To Other Command
 
-- Command one   >> Pipe Symbol    >> Command two  
-- `echo Hello`  >> echo Hello `|` >> echo Hello | `grep there`  
-- e.g. `$ ls -l /usr/bin | grep zip`  
-- Symbol ( `>` ) : Write or OverWrite to a file  
-  -`$ echo Hello World! > hello.txt`  
-- Symbol ( `>>` ) : Append to a file  
+- Command one   >> Pipe Symbol    >> Command two
+- `echo Hello`  >> echo Hello `|` >> echo Hello | `grep there`
+- e.g. `$ ls -l /usr/bin | grep zip`
+- Symbol ( `>` ) : Write or OverWrite to a file
+  -`$ echo Hello World! > hello.txt`
+- Symbol ( `>>` ) : Append to a file
   -`$ echo Hi Everyone! >> hello.txt`
 
 ## - `$ wc -w hello.txt` : 단어수
@@ -286,11 +287,11 @@ echo "scale=2;22/7" | bc # 3.14
 ```bash
     [ hello = hello ]
     echo $? # -> 0 ( 결과 0 = 문제없음)
-    
+
     [ 1 = 0 ]
     echo $? # -> 1 (결과 1 = 문제있음 )
-    
-    [ 1 -eq 1 ] 
+
+    [ 1 -eq 1 ]
     echo $? # 0
 ```
 
@@ -374,7 +375,7 @@ echo "scale=2;22/7" | bc # 3.14
     read -p "Enter your password: "$'\n' -s password
     echo $password
 
-    # Set Character Limit 
+    # Set Character Limit
     read -p "3자 이하로 입력 : "$' ' -n 3 ch
     echo
     echo $ch
@@ -485,20 +486,20 @@ echo "scale=2;22/7" | bc # 3.14
 
 ## bash 테스트 조건
 
-|   조건    | 설명  |
-| :-------: | :---- |
-| $a -lt $b | a < b |
-| $a -gt $b | a > b |
-| $a -le $b | a <= b |
-| $a -ge $b | a >= b |
-| $a -eq $b | a == b |
-| $a -ne $b | a != b |
-| -e $FILE | $FILE exists |
-| -d $FILE | $FILE exists and is a directory |
-| -f $FILE | $FILE exists and is a regular file |
-| -z $str1 | $str1 is empty |
-| $str1 = $str2 | $str1 is equal to $str2 |
-| $str1 != $str2 | $str1 is not equal to $str2 |
+|      조건      | 설명                               |
+| :------------: | :--------------------------------- |
+|   $a -lt $b    | a < b                              |
+|   $a -gt $b    | a > b                              |
+|   $a -le $b    | a <= b                             |
+|   $a -ge $b    | a >= b                             |
+|   $a -eq $b    | a == b                             |
+|   $a -ne $b    | a != b                             |
+|    -e $FILE    | $FILE exists                       |
+|    -d $FILE    | $FILE exists and is a directory    |
+|    -f $FILE    | $FILE exists and is a regular file |
+|    -z $str1    | $str1 is empty                     |
+| $str1 = $str2  | $str1 is equal to $str2            |
+| $str1 != $str2 | $str1 is not equal to $str2        |
 
 ## To evaluate an expression on `bash` $\rightarrow$ `expr`
 
@@ -506,5 +507,3 @@ echo "scale=2;22/7" | bc # 3.14
 - string substring, length of strings, etc
 
 ## 들어오는 매개 변수 : `$1 ~ $999`, `$*, $@`
->>>>>>>
->>>>>>> 00cd0b4468bbed4716887eb2d4816fa4512dddcb

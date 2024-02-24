@@ -14,6 +14,3 @@ elif [ -d $file ]; then
 else
     echo "$file does not exit"
 fi
-
-
-
