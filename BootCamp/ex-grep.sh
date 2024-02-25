@@ -24,8 +24,6 @@ ls [^[:upper:]]_*
 # i - Case insensitive
 # I - Case sensitive.
 # l - Lowercase match lower case or uppercase; uppercase match only uppercase.
-cat (#i)a*
-
 ## Recursive Globbing
 # -> 재귀적 glob 연산자 **를 사용하여 작업 디렉토리의 파일(*와 같이)과 모든 하위 디렉토리의 모든 파일을 재귀적으로 확장할 수도 있습니다.
 ls ~/Temp/**/[k-z]*.txt | nl
@@ -39,3 +37,7 @@ ls ~/Temp/**/[k-z]*.txt | nl
 # -> ^ - 그 뒤를 잇는 모든 한정자에 기록된 것을 필터링 합니다.
 # -> `-` - 수식어는 (심볼릭 링크 자체가 아닌) 기호 링크의 대상에 대해 작동합니다릭
 # -> `[<시작>, <끝>]` - 위치에 따라 확장할 파일 이름을 선택합니다. 마지막 대결에서 뒤로 세는 것은 음수일 수 있습니다.
+
+grep 'ock' smp-grep*.txt
+grep -E '(dock|clock)' smp-grep.txt
+grep -i 'the' smp-grep.txt

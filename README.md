@@ -507,3 +507,15 @@ echo "scale=2;22/7" | bc # 3.14
 - string substring, length of strings, etc
 
 ## 들어오는 매개 변수 : `$1 ~ $999`, `$*, $@`
+
+
+## Commands
+
+```bash
+
+  sort -k -1 -r ss | nl
+  sort -c kor2
+  echo $? # error = 1, ok = 0
+
+
+```
