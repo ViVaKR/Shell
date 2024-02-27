@@ -508,7 +508,6 @@ echo "scale=2;22/7" | bc # 3.14
 
 ## 들어오는 매개 변수 : `$1 ~ $999`, `$*, $@`
 
-
 ## Commands
 
 ```bash
@@ -516,6 +515,74 @@ echo "scale=2;22/7" | bc # 3.14
   sort -k -1 -r ss | nl
   sort -c kor2
   echo $? # error = 1, ok = 0
+
+  # 일련번호
+  seq -s ' ' 1 50
+  seq 10
+  seq -s ', ' 30
+  seq -s ' ' 1 5 100  # 5씩 증가
+  seq -s ' ' 100 -5 10
+  seq -w 0000 100 # 자릿수
+  seq -w 100 0.5 110 # 소숫점
+  seq -f "0.5f" 100 0.5 120 # 소숫점 이하 5자리
+  seq -f "%g" 100 0.13 120
+
+  # 인수분해
+  factor 30
+  factor 100
+  factor 10 20 30 40 50
+
+  # number format
+  numfmt 123455687463 --grouping
+  numfmt 2048 --to=iec #-> 2.0K
+  du /etc 2>/dev/null | numfmt --to=iec
+  du -sh /etc/* 2>/dev/null | sort -n
+
+  du  /etc 2>/dev/null | sort -n | numfmt --to=si | tail -5
+
+  expr 0 \| 9
+  expr '' \| 8
+  expr 9 \| 8
+  expr 0 \& 45
+  expr match programming pro #-> 3, 앞에서부터 매칭 되는 것을 찾음
+  expr programming : pro
+
+  expr substr programming 3 5 #-> 1부터 인덱스 시작
+  expr index programming r #-> 5
+  expr length program #-> 7
+
+  rm -f [^rte]*
+  rm -i # 권장
+  cp -r /etc/b* . 2>/dev/null
+  cp -i # 권장
+
+
+  brew install rename
+  -> rename -s .txt .backup *
+
+  mv
+
+  touch
+
+  verbose
+
+  -V : version
+
+  # 정수
+
+  ! : not
+  ~ : bit not
+  ** : exponentialt
+
+  # let 사용시 $ 기호는 사용하지 않음
+  let b=++a && echo $b #-> 11
+  let b=2\*3 && echo $b #-> 6
+  let b=2\*\*10 && echo $b #-> 1024
+  let b=2==2 && echo $b #-> 1
+  let b=1\&1 && echo $ #-> 1
+
+  # 3항 연산
+  let b=\(3\<5\)\?500\:1000 && echo $b #-> 500
 
 
 ```
