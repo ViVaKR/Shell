@@ -585,4 +585,21 @@ echo "scale=2;22/7" | bc # 3.14
   let b=\(3\<5\)\?500\:1000 && echo $b #-> 500
 
 
+  # touch multiple directories
+  touch submain{1..10}/file.txt
+
+  #-> touch files
+  find . -type d -exec touch {}/Viv \;
+  # -exec touch {}/hiya \; --> 각 결과가 주어지면 해당 값은 {}에 저장됩니다.
+  # 따라서 touch {}/hiya를 사용하면 해당 "something"/hiya를 터치하는 것입니다.
+  # 마지막 \;는 exec에서 find clause로 필요합니다.
+
+  #-> look for them
+  find . -type d --> 디렉토리 구조에서 디렉토리를 검색합니다.
+
+  #-> The total list of files/dirs is
+  find .
+
+
+
 ```
