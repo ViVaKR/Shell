@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+# (1) Shebang (#!) : 어떤 인터프리터를 사용할지 쉘 스크립트에게 알려주는 방법
+# 절대경로 방식 : #!/bin/bash
+
+# (2) PIPING : Send command output to other commands
+# ~$ echo Hello there | grep there
+
+# (3) Output redirection
+# ~$ echo Hello World > hello.txt
+# ~$ echo Hi Everyone >> hello.txt
+
+echo 'Start'
