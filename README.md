@@ -1,6 +1,6 @@
 # SHELL
 
-## shebang : `echo #SHELL`
+## Shebang : `echo $SHELL`
 
 ## Arithmetic Expressions
 
