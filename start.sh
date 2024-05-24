@@ -8,6 +8,7 @@ crm="\033[0m"
 echo
 echo "$cyw $ulr ZSH Shell Start $ulr $crm"
 echo
+
 function test() {
 	local arr=("hello", "world")
 	echo
@@ -204,11 +205,6 @@ echo "$add, $sub, $mul, $div, $mod"
   (( 값1 == 값2 )) : 값1과 값2가 같으면 참
   (( 값1 != 값2 )) : 값1과 값2가 다르면 참
 
-  **
-  ~
-  <<
-  >>
-  &
   ||
   num++
   num--
@@ -256,7 +252,7 @@ done
 
 
 
-for i in {1..10}; do
+     for i in {1..10}; do
 echo "test $i"
 done
 
