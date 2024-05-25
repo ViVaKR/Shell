@@ -38,3 +38,4 @@ u50="\u00B0" # °, degree
 
 cyw="\033[33m"
 cred="\033[31m"
+cclear="\033[0m"

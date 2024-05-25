@@ -22,3 +22,13 @@ fi
 echo
 echo "u02 한줄 작성"
 # if [ $num1 -lt $num2 ]; then elif [ $num1 -eq $num2 ]; then echo "bbb"; else echo "no"; fi
+
+fileToRemove="/tmp/abc.txt"
+echo "$u02 $fileToRemove 파일을 삭제를 시작 합니다..."
+rm "$fileToRemove" 2>/dev/null
+
+if [ $? -eq 0 ]; then
+    echo "$u02 $fileToRemove 파일이 삭제되었습니다."
+else
+    echo "$u02 $fileToRemove 파일이 존재하지 않습니다."
+fi

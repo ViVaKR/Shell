@@ -88,3 +88,21 @@ until (($count2 <= 5)); do
 done
 echo
 echo
+
+echo "$u01 구구단 $u01"
+for i in {1..9}; do
+    for j in {1..9}; do
+        if ((j % 5 == 0)); then
+            echo
+        fi
+        result=$((i * j))
+        printf "%2d \u00D7 %2d \u003D %2d " $i $j $result
+    done
+    echo
+    echo
+done
+echo
+
+for file in $(find . -type f -name '*.sh'); do
+    echo $file
+done
