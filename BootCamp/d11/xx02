@@ -1,0 +1,7 @@
+bind:x:101:101::/var/cache/bind:/usr/sbin/nologin
+messagebus:x:102:102::/nonexistent:/usr/sbin/nologin
+systemd-network:x:103:104:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:104:105:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+systemd-timesync:x:105:106:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
