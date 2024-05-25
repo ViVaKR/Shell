@@ -1,4 +1,5 @@
 #! /usr/bin/env zsh
 
-echo "Hello, include"
-echo "This is a test"
+for i in {1..32}; do
+    echo "\$((1 << $i)) $((1 << i))"
+done
