@@ -1,0 +1,11 @@
+zsh: no such file or directory: ./ifs.sh
+zsh: no such file or directory: ./ifs.sh
+
+✨ if statement ✨
+
+이중 소괄호 (( )) 를 사용하면 산술 연산을 수행할 수 있습니다.
+➥ 10 < 30
+
+u02 한줄 작성
+➥ /tmp/abc.txt 파일을 삭제를 시작 합니다...
+➥ /tmp/abc.txt 파일이 존재하지 않습니다.

@@ -2,6 +2,8 @@
 
 . $(dirname "$0")/Include/unicode.sh
 
+clang -std=c17 -g -Wall -o ./build/ShellTester ./ShellTester.c
+
 if [ $# -eq 0 ]; then
   echo "Input Argument is required"
   exit 1
@@ -70,6 +72,10 @@ case $Choice in
   echo "$u01 Random Number $u01"
   ./random_number.sh
   ;;
+13)
+  echo "$u01 ShellTester $u01"
+  ./build/ShellTester
+  ;;
 a[0-9]) # [0-9] is a wildcard for a single digit
   echo "$u01 a로 시작하는 숫자 $u01"
   ;;
@@ -85,15 +91,11 @@ esac
 # 3) ;;
 # *) ;;
 # esac
-sleep 1
+
+sleep .3 # sleep for 0.3 seconds
+
 end=$(perl -MTime::HiRes=time -e 'printf "%.9f\n", time') # end time
 
 diff=$((end - started))
 
-# $ date "+%Y-%m-%d %H:%M:%S %Z"
-# 2017-09-25 13:43:51:
-
-# $ date "+%Y-%m-%d %H:%M:%S %Z"
-# 2017-09-25 13:42:31 EDT
-# find . -type f -name '*.log.*' -mtime +365 | lss
 echo "It took $diff seconds"

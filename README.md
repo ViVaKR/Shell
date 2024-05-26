@@ -6,8 +6,7 @@
 
 >- Shell ZSH, BASH
 
-```zsh
-
+```bash
     # Shutdown
     >- shutdown -r now
     >- shutdown -P now
@@ -252,11 +251,22 @@
         - cat /etc/passwd | cut -d : -f 1,3
 
     30. awk : `awk 'pattern {action}' file`
+        - 텍스트 파일을 원하는 대로 필터링하거나 가공을 통하여 행과 열로 출력해 주는 프로그램.
+        - `$0` : row, $1 $2 $3 ...: columns..
+
         - ps -ef | awk '{ print $1,$2 }'
         - ps -ef | awk '{ print $0 }'
         - ps -ef | awk '{print $1, "\t", $3}'
         - echo "5 4" | awk -F" " '{print $1 * $2}' # 20
         - echo "5 4" | awk -F" " '{print $1 / $2}' # 1.25
+        - cat a.txt | awk '{print $1 * $2}'
+        - awk '{print $1"\t"$2}' table1.txt # 특정 필드
+        - awk '/A/' table1.txt # 패턴이 포함된 레코드 출력
+        - awk '{sum += $3} END {print sum}' table1.txt
+
+
+
+
 
     31. sort
         -> b : 선행 공백 무시
@@ -296,7 +306,6 @@
     37. tr
 
         - 문자 변경  및 삭제, translae or delete characters
-
         - 삭제 (-d, delete)
             -> echo "abcd" | tr -d 'c'
             -> echo "aaabbbbcccccddddd" | tr -d 'bcd'
@@ -348,11 +357,8 @@
         -> rm -rf dir
 
     44. cp : 파일 복사
-        ->
 
     45. alias, unalias
-        -> turn off : \\command
-        ->
 
     46. let : $ enable
         - 수식 다루기 정수 연산
@@ -373,7 +379,6 @@
         - echo $((a + 10))
         - echo $((a * 2))
         - b=$((2^10)) && echo $b
-        - b=$((2 << 1)) && echo $b
         - b=$((100 >> 2)) && echo $b
         - echo $[a - 123] // single square brackets
         - echo $[++a]
@@ -578,6 +583,15 @@
     # 표준 입출력 및 에러
     # 숫자(0,1,2) = 파일 디스크립터 파일, 포인터, fopen fclose
 
+    - 리다이렉션 (redirection), 입출력 재 지정
+        - `>` : 표준 출력, '명령 > 파일' : 명령의 결과를 파일로 저장
+        - `>>` : 표준 출력 (추가) '명령 >> 파일' : 명령의 결과를 기존 파일 데이터에 추가
+        - `<` : 표준 입력 '명령 < 파일' : 파일의 데이터를 명령에 입력
+        - `2>&1` : 표준에러를 표준 출력으로 재지정, redirection
+        - `> /dev/null 2>&1` : 출력 결과도 에러내용도 버려 버린다는 의미
+        - `date > d1` <==>  'data 1> d1' (즉, 1이 생략되어 있음)
+
+
     - stdin ( 0 ) : 표준 입력 standard input (키보드)
         -> nl 0< file
         -> cat < s
@@ -590,9 +604,6 @@
         -> badcommand 2> saveToFile (에러 발생, 오류내용이 파일에 저장됨)
         -> rmdir ./ds 2>/dev/null (에러 발생시 메시지 숨기기)
         -> /dev/null : 블랙홀, 휴지통 개념
-
-    - 출력 재 지향 : ( 1> )
-        -> `date > d1` <==>  data 1> d1 (즉, 1이 생략되어 있음)
 
     - Append ( >> ) : 파일내용 끝에 추가
 
@@ -607,8 +618,6 @@
             >- haha
             >- hoho
             >- END
-
-```
 
 ## Run Level
 
@@ -645,26 +654,6 @@
 1. gedit -> `$ apt-get update && apt-get install gedit && apt -y install gnome`
 2. nano
 3. vi
-
-## 네트워크 명령어
-
-```bash
-    #
-```
-
-## 패키지 관리
-
-```bash
-    #
-```
-
-```bash
-
-    # auto remove
-    >- apt autoremove
-
-
-```
 
 ## 127.0.0.53 DNS 비활성하기
 
