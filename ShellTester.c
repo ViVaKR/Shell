@@ -35,6 +35,9 @@ int main(int argc, char *argv[])
     -awk -F'[:\t]' -> 다중 필드 구분자, ':' 또는 '\t'를 구분자로 사용
     - `-f` 옵션을 사용하여 awk 스크립트 파일을 지정할 수 있음
 
+    --> $ cat e.txt | awk '{ print length(); }' # 각 줄의 길이 출력
+    --> $ awk ' { print $0 }' score.txt | sort -r # score.txt 파일을 읽어서 역순으로 출력
+
     (ex)
     awk -F":" '/pattern' {print $1}' /etc/passwd
     -F : field seperator
@@ -133,6 +136,21 @@ int main(int argc, char *argv[])
 
     ```
     --> $ awk -f awk1.awk awkfile # 실행
+
+    --> $ cat test.csv | awk -F, '{ print NR " " $0;}' # csv 파일을 읽어서 출력
+
+    ## 산술 계산 ##
+    --> $ awk '{ sum += $1 } END { print sum }' num.txt # 합계
+    --> $ awk '{ sum += $1 } END { print sum/NR }' num.txt # 평균
+    --> $ awk 'NR ==1 { max = $1 } { if($1 > max) max = $1 } END { print max }' num.txt # 최대값
+    --> $ awk 'NR ==1 { min = $1 } { if($1 < min) min = $1 } END { print min }' num.txt # 최대값
+    --> $ awk 'NR == 1 { min = $1 } { if($1 < min) min = $1 } END { print min }' num.txt # 최소값
+
+    ## 포맷팅 ##
+    --> $ awk '{ printf "%10s %3d %3d %3d\n", $1, $2, $3, $4}' printf.txt
+
+
+
      */
 
     // char *args[3];

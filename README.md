@@ -264,10 +264,6 @@
         - awk '/A/' table1.txt # 패턴이 포함된 레코드 출력
         - awk '{sum += $3} END {print sum}' table1.txt
 
-
-
-
-
     31. sort
         -> b : 선행 공백 무시
         -> f : 대소문자 구분 안함
