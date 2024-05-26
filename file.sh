@@ -68,6 +68,12 @@ fi
 
 echo $rs
 
+echo "file.sh 파일정보"
+stat ./file.sh
+
+ls -lu
+ls -lc
+
 : <<"EOF"
 
 [ -b FILE ]  파일이 블록 장치 파일이면 참
@@ -93,5 +99,11 @@ echo $rs
 [ FILE1 -nt FILE2 ]  FILE1이 FILE2보다 최신이면 참
 [ FILE1 -ot FILE2 ]  FILE1이 FILE2보다 오래되었으면 참
 [ FILE1 -ef FILE2 ]  FILE1과 FILE2가 동일한 파일이면 참
+
+atime (access time) : 파일이 마지막으로 읽힌 시간
+mtime (modify time) : 파일이 마지막으로 변경된 시간
+ctime (change time) : 파일의 inode가 마지막으로 변경된 시간
+
+
 
 EOF

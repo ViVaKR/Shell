@@ -27,3 +27,6 @@ echo ${var2%%log*} # remove the longest match from the end
 echo ${var2%log*}  # remove the shortest match from the end
 echo ${var2##*log} # remove the shortest match from the beginning
 echo ${var2#*log}  # remove the longest match from the beginning
+
+ss=(a b c d)
+rv=$null
