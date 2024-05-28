@@ -208,8 +208,32 @@
 
         |file or dir | 권한 | 하드링크수 | 소유주 | 소유 그릅 | 파일사이즈 | 파일접근날짜 | 파일 |
 
-		-> find / -type s -exec ls -alF {} \; 2> /dev/null # hide error messages
-		-> find / -type s -S ls -alF {} \; 2> /dev/null # hide error messages
+		- find / -type s -exec ls -alF {} \; 2> /dev/null # hide error messages
+		- find / -type s -S ls -alF {} \; 2> /dev/null # hide error messages
+        - find . -type f *.sh exec ls -alF {} \;
+        - find . -type f -iname "*.Sh" # 대소문자 무시
+        - find . -type f -maxdepth 2 -name "*.sh"
+        - find . -type f -not -name "*.sh"
+        - find . -type f ! -name "*.sh"
+        - find . -type f -name 'bb*' ! -name '*.sh' # Combine multiple search
+        - find . -name '*.sh' -name '*.txt'
+        - find . -type d -maxdepth -name 'd*'
+        - find ./BootCamp ./Include -name 'd*' # Search multiple directories
+        - find ~ -type f -name '.*'
+        - find . -type f -perm 0755
+        - find /bin -type f -perm -u=x
+        - find . -user $(whoami) -name '*.sh'
+        - find . /var/www -group $(id -g -n)
+        - find ~ -maxdepth 2 -name '.zs*'
+        - find / -mtime 50
+        - find / -atime 50
+        - find / -mtime +50 -mtime -100
+        - find . -cmin -120
+        - find ~ -maxdepth 3 -size +10M -size -300M
+        - find ~ -maxdepth 3 -size +10M -size -300M -exec eza -l  {} \;
+        - find ~ -type f -maxdepth 2 -name '*.txt' -exec ls -s {} \; | sort -n -r | head -5
+
+
 
 	22. vdir, dir
 
@@ -387,13 +411,21 @@
         - history -5
         - history +5
 
-    47. expr : external command, 외부명령어
+    47. expr : 정수 연산
         - expr 1 / 2
+        - expr 4 \* 3
+        - expr 4 / 3
 
-    48. bc (basic command)
+    48. bc (bash calculator) : 공학용 산술과 실수 계산이 가능
         - echo "3.14 * 5 *5" | bc
         - echo "2^8" | bc
         - x=`echo "2^10" | bc` && $x
+        - echo "4 / 3" | bc -l # -l 실수로 출력
+        - echo "(34.8 + 51.1)^2 | bc
+        - echo "scale=16; 4/3" | bc
+        - echo "e(1)" | bc -l # euler
+        - echo "sqrt(10^2) | bc
+
 
     49. USER :
         - 관리자(root), 시스템 (no login), 일반
@@ -426,6 +458,8 @@
         - who
         - w : detail view
             - IDLE : 로그인 후 대기 시간.
+        - id -g -n : 그룹
+        - id -u -n : 이름
         - whoami
         - users
         - groups
@@ -562,7 +596,7 @@
 
     64. kill :
         - 시그널
-            >- kill -l
+            * kill -l
         - kill -9 <pid>, kill -9 59600
         - kill -9 %1  # kill by job number
         - `man 7 signal` : OS <-signal-> Process
@@ -574,6 +608,16 @@
 
     66. ps
         - ps -ef | grep sleep
+
+    67. date
+        - python -c 'from time import time; print(int(round(time() * 1000)))'
+        - date "+%Y-%m-%d %H:%M:%S"
+        - date +%F
+        - echo $(date +%FT%T)
+        - touch "$(date '+%Y%m%d').txt"
+
+
+
 ---
 
     # 표준 입출력 및 에러
@@ -618,11 +662,11 @@
 ## Run Level
 
 - 초기화 명령어 -> init 뒤의 숫자
-    >- 0 : Power Off
-    >- 6 : Reboot
-    >- 1 : Rescue
-    >- 2, 3, 4 : 3번이 보편적 (Server)
-    >- 5 : Grapical, 그래픽 모드의 다중 사용자 모드
+    - 0 : Power Off
+    - 6 : Reboot
+    - 1 : Rescue
+    - 2, 3, 4 : 3번이 보편적 (Server)
+    - 5 : Grapical, 그래픽 모드의 다중 사용자 모드
 
 ```bash
 
