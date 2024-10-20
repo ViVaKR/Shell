@@ -750,6 +750,20 @@
         -> paste name -s -d"|" > names
         -> paste name -s -d"\t" > names
 
+             List the files in the current directory in three columns:
+           ls | paste - - -
+
+     Combine pairs of lines from a file into single lines:
+           paste -s -d '\t\n' myfile
+
+     Number the lines in a file, similar to nl(1):
+           sed = myfile | paste - -
+
+     Create a colon-separated list of directories named bin, suitable for use in
+     the PATH environment variable:
+
+           find / -name bin -type d | paste -s -d : -
+
     28. join : 공통된 필드를 찾아서 합침
         -> join k1 e1 # 중복된 항목 단일 항목 처리, 학생들의 과목 1, 과목 2 병합 처리
         -> join -e"00" -o 0,1.2,2.2 k2 e2 # 공백 부분 00처리
@@ -1105,7 +1119,12 @@
         - touch "$(date '+%Y%m%d').txt"
 
 
-
+    68. ps : shell type
+    69. while read line
+    while read line
+    do
+    echo $line
+    done < zs
 ---
 
     # 표준 입출력 및 에러
