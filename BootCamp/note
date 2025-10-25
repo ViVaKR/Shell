@@ -1,3 +1,3 @@
-#! /usr/bin/env zsh
+#! /usr/bin/bash
 
 sort -t : -k 3 pw | awk -F : '{print $1, $3}' | nl

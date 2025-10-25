@@ -1,4 +1,4 @@
-#! /usr/bin/env zsh
+#! /usr/bin/bash
 
 . $(dirname "$0")/Include/unicode.sh
 echo

@@ -1,6 +1,5 @@
 # Shell
 
-<<<<<<< HEAD
 ## MacOS Zsh
 
 ## Ubuntu Bash
@@ -63,8 +62,8 @@
     sudo chsh user
 
     # 현재 사용자가 사용중인 쉘
-    sudo grep vivakr /etc/passwd 
-    
+    sudo grep vivakr /etc/passwd
+
 ```
 
 ## 일반변수
@@ -128,7 +127,7 @@
       * decalre -A map
     * 함수 타입 : `-f`
       * declare : `-f`
-  
+
   * 환경변수 (export) : `-x`
     * `declare -x var`
     * 스크립트 외부 환경에서도 이 변수를 사용할 수 있게 해줌
@@ -189,12 +188,12 @@
 
 ## Arithmetic Expressions
 
-`+` : addition  
-`-` : subtraction  
-`*` : multiplication  
-`/` : division  
-`**` : exponetiation  
-`%` : mudulus  
+`+` : addition
+`-` : subtraction
+`*` : multiplication
+`/` : division
+`**` : exponetiation
+`%` : mudulus
 
 ```bash
     var=$((3 ** 4))
@@ -264,7 +263,7 @@
 ## 이중 괄호 : `(( ))`
 
 - 괄호 내부에 기호 수식을 사용하여 계산을 할수 있음
-  
+
 ## 이중 대괄호 : `[[ ]]`
 
 - 문자열의 비교를 위해 사용됨
@@ -275,16 +274,16 @@
 
 ## `PIPING` : Send Command Output To Other Command
 
-> Command one   >> Pipe Symbol    >> Command two  
+> Command one   >> Pipe Symbol    >> Command two
 > `echo Hello`  >> echo Hello `|` >> echo Hello | `grep there`
 >> (ex) `$ ls -l /usr/bin | grep zip`
 ---
 
 ## Output Redirection
 
-* Symbol ( `>` ) : Write or OverWrite to a file  
-  -`$ echo Hello World! > hello.txt`  
-* Symbol ( `>>` ) : Append to a file  
+* Symbol ( `>` ) : Write or OverWrite to a file
+  -`$ echo Hello World! > hello.txt`
+* Symbol ( `>>` ) : Append to a file
   -`$ echo Hi Everyone! >> hello.txt`
 
 ## `$ wc -w hello.txt` : 단어수
@@ -304,11 +303,11 @@
 ```bash
     [ hello = hello ]
     echo $? # -> 0 ( 결과 0 = 문제없음)
-    
+
     [ 1 = 0 ]
     echo $? # -> 1 (결과 1 = 문제있음 )
-    
-    [ 1 -eq 1 ] 
+
+    [ 1 -eq 1 ]
     echo $? # 0
 ```
 
@@ -401,7 +400,7 @@
     read -p "Enter your password: "$'\n' -s password
     echo $password
 
-    # Set Character Limit 
+    # Set Character Limit
     read -p "3자 이하로 입력 : "$' ' -n 3 ch
     echo
     echo $ch

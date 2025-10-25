@@ -91,10 +91,6 @@ int main(int argc, char *argv[])
         else {print}
         }' ex.txt
 
-    // result
-    // soft    60 70 80
-    // prog    90 100 110
-
     --> ```
     awk '{
         total=$2+$3+$4

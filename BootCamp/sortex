@@ -1,4 +1,4 @@
-#! /usr/bin/env zsh
+#! /usr/bin/bash
 
 # passwd file 정렬 콜론을 기준으로 3번째 컬럼으로 정렬
 # 넘버로 처리하고 첫번째와 세번째 컬럼을 프린트하기

@@ -20,7 +20,7 @@ int main() {
 // zsh: segmentation fault  ./prog
 // lldb ./prog
 // run
-// -> re launch 
+// -> re launch
 // (lldb) target create prog
 //-> break point
 // (lldb) b main
@@ -28,7 +28,7 @@ int main() {
 // -> Get Position
 // (lldb) list 10
 // -> commands
-// `c` -> Continue execution of all threads in the current process. 
+// `c` -> Continue execution of all threads in the current process.
 // `n` -> Source level single step, stepping over calls.
 // `ni` -> Instruction level single step, stepping over calls.
 // `s` -> Source level single step, stepping into calls.
@@ -39,7 +39,7 @@ int main() {
 // 충돌지점에서 -> `n` (step over)
 // -> back trace (역추적, 어떻게 현재 위치에 도달했는지 보기, call stack)
 // (lldb) bt
-// (lldb) n 
+// (lldb) n
 // crash -> end
 // -
 // (lldb) target create prog
@@ -54,5 +54,3 @@ int main() {
 // down - Select next
 // left - Unexpand or select parent
 // right - Expand
-//
-//
